@@ -45,6 +45,13 @@ def next_turn(snake, food):
     elif direction == "up":
         x -= SPACE_SIZE
 
+    snake.coordinated.insert(0, (x, y))
+
+    square = canvas.create_rectangle(x, y, x + SPACE_SIZE, y + SPACE_SIZE, fill=SNAKE_COLOR, tag = "snakeBody")
+
+    snake.square.insert(0, square)
+    window.after(SPEED, next_turn, snake, food)
+
 def change_direction(new_direction):
     pass
 
