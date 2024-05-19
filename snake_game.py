@@ -70,7 +70,10 @@ def next_turn(snake, food):
 
         del snake.squares[-1]
 
-    window.after(SPEED, next_turn, snake, food)
+    if check_collisions(snake):
+        game_over()
+    else:
+        window.after(SPEED, next_turn, snake, food)
 
 def change_direction(new_direction):
 
