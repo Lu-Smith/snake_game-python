@@ -63,11 +63,12 @@ def next_turn(snake, food):
 
         food = Food()
 
-    del snake.coordinates[-1]
+    else:
+        del snake.coordinates[-1]
 
-    canvas.delete(snake.squares[-1])
+        canvas.delete(snake.squares[-1])
 
-    del snake.squares[-1]
+        del snake.squares[-1]
 
     window.after(SPEED, next_turn, snake, food)
 
