@@ -93,8 +93,12 @@ def change_direction(new_direction):
             direction = new_direction
 
 
-def check_collisions():
-    pass
+def check_collisions(snake):
+    x, y = snake.coordinates[0]
+
+    if x < 0 or x >= GAME_WIDTH:
+        print("GAME OVER")
+        return True
 
 def game_over():
    pass
